@@ -60,6 +60,7 @@ a{color:#d2b48c}a:hover{color:#ead7b8}
 @keyframes ms-fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @keyframes ms-drawk{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .ms-draw{transform-origin:left}
+@media (min-width:1000px){.ms-steps>li:nth-child(-n+2) .ms-draw{right:-32px !important}}
 .ms-nav{transition:background .35s ease, box-shadow .35s ease}
 .ms-nav.is-scrolled{background:rgba(8,9,9,0.97) !important;box-shadow:0 10px 30px rgba(0,0,0,0.35)}
 @media (prefers-reduced-motion: no-preference){
@@ -67,8 +68,16 @@ a{color:#d2b48c}a:hover{color:#ead7b8}
 @keyframes ms-zoom{from{transform:scale(1.1)}to{transform:scale(1)}}
 .ms-hero-in{animation:ms-in 1.1s cubic-bezier(.2,.7,.2,1) both}
 .ms-fade{animation:ms-fade .45s ease both}
-.ms-js .ms-reveal .ms-draw{transform:scaleX(0);transition:transform 1.4s cubic-bezier(.2,.7,.2,1) .3s}
+.ms-js .ms-reveal .ms-draw{transform:scaleX(0);transition:transform 1.1s cubic-bezier(.45,0,.55,1) .35s}
+.ms-js .ms-reveal .ms-dot{transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1) .2s}
 .ms-js .ms-reveal.is-in .ms-draw{transform:scaleX(1)}
+.ms-js .ms-reveal.is-in .ms-dot{transform:scale(1)}
+@media (min-width:1000px){
+.ms-js .ms-steps>li:nth-child(2) .ms-draw{transition-delay:1.45s}
+.ms-js .ms-steps>li:nth-child(3) .ms-draw{transition-delay:2.55s}
+.ms-js .ms-steps>li:nth-child(2) .ms-dot{transition-delay:1.35s}
+.ms-js .ms-steps>li:nth-child(3) .ms-dot{transition-delay:2.45s}
+}
 .ms-hero-in:nth-child(2){animation-delay:.15s}
 .ms-hero-in:nth-child(3){animation-delay:.3s}
 .ms-hero-in:nth-child(4){animation-delay:.45s}
@@ -76,7 +85,9 @@ a{color:#d2b48c}a:hover{color:#ead7b8}
 @supports (animation-timeline: view()){
 html:not(.ms-js) .ms-reveal{animation:ms-in linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
 html:not(.ms-js) .ms-reveal .ms-img{animation:ms-zoom linear both;animation-timeline:view();animation-range:entry 0% cover 55%}
-html:not(.ms-js) .ms-reveal .ms-draw{animation:ms-drawk linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+html:not(.ms-js) .ms-reveal .ms-draw{animation:ms-drawk linear both;animation-timeline:view();animation-range:entry 20% cover 35%}
+html:not(.ms-js) .ms-steps>li:nth-child(2) .ms-draw{animation-range:cover 35% cover 45%}
+html:not(.ms-js) .ms-steps>li:nth-child(3) .ms-draw{animation-range:cover 45% cover 55%}
 }
 .ms-js .ms-reveal{opacity:0;transform:translateY(32px);transition:opacity 1s ease, transform 1.1s cubic-bezier(.2,.7,.2,1)}
 .ms-js .ms-reveal .ms-img{transform:scale(1.1);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
@@ -329,12 +340,12 @@ html:not(.ms-js) .ms-reveal .ms-draw{animation:ms-drawk linear both;animation-ti
       <p style="flex: 0 1 380px; margin: 0; font-size: 17px; line-height: 1.7; font-weight: 300; color: #3f3e3b">Uma jornada cuidadosamente estruturada para que suas escolhas ganhem forma com tranquilidade e confiança.</p>
     </div>
 
-    <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 56px 32px">
+    <ol class="ms-steps" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 56px 32px">
 
       <li class="ms-reveal ms-hover-zoom" style="display: flex; flex-direction: column; gap: 24px">
         <div style="position: relative; padding-top: 20px; display: flex; align-items: baseline; gap: 14px">
           <span class="ms-draw" aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #161717"></span>
-          <span aria-hidden="true" style="position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: #161717"></span>
+          <span class="ms-dot" aria-hidden="true" style="position: absolute; top: -5px; left: 0; z-index: 1; width: 11px; height: 11px; margin-top: -1px; border-radius: 50%; background: #161717; box-shadow: 0 0 0 4px #e6e1d9"></span>
           <span style="font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #6e5130">Etapa</span>
           <span style="font-size: 36px; font-weight: 200; line-height: 1; color: #161717">01</span>
         </div>
@@ -351,7 +362,7 @@ html:not(.ms-js) .ms-reveal .ms-draw{animation:ms-drawk linear both;animation-ti
       <li class="ms-reveal ms-hover-zoom" style="display: flex; flex-direction: column; gap: 24px">
         <div style="position: relative; padding-top: 20px; display: flex; align-items: baseline; gap: 14px">
           <span class="ms-draw" aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #161717"></span>
-          <span aria-hidden="true" style="position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: #161717"></span>
+          <span class="ms-dot" aria-hidden="true" style="position: absolute; top: -5px; left: 0; z-index: 1; width: 11px; height: 11px; margin-top: -1px; border-radius: 50%; background: #161717; box-shadow: 0 0 0 4px #e6e1d9"></span>
           <span style="font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #6e5130">Etapa</span>
           <span style="font-size: 36px; font-weight: 200; line-height: 1; color: #161717">02</span>
         </div>
@@ -367,7 +378,7 @@ html:not(.ms-js) .ms-reveal .ms-draw{animation:ms-drawk linear both;animation-ti
       <li class="ms-reveal ms-hover-zoom" style="display: flex; flex-direction: column; gap: 24px">
         <div style="position: relative; padding-top: 20px; display: flex; align-items: baseline; gap: 14px">
           <span class="ms-draw" aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #161717"></span>
-          <span aria-hidden="true" style="position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: #161717"></span>
+          <span class="ms-dot" aria-hidden="true" style="position: absolute; top: -5px; left: 0; z-index: 1; width: 11px; height: 11px; margin-top: -1px; border-radius: 50%; background: #161717; box-shadow: 0 0 0 4px #e6e1d9"></span>
           <span style="font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #6e5130">Etapa</span>
           <span style="font-size: 36px; font-weight: 200; line-height: 1; color: #161717">03</span>
         </div>
