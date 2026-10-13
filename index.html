@@ -18,7 +18,7 @@
 body{margin:0;background:#0b0c0c}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-section,header{scroll-margin-top:72px}
+section,header{scroll-margin-top:96px}
 a{color:#d2b48c}a:hover{color:#ead7b8}
 .ms-btn{transition:background .25s ease,color .25s ease,border-color .25s ease}
 .ms-btn:hover{background:#efeeeb;color:#0b0c0c;border-color:#efeeeb}
@@ -46,29 +46,41 @@ a{color:#d2b48c}a:hover{color:#ead7b8}
 <div style="font-family: 'Hanken Grotesk', 'Helvetica Neue', Helvetica, sans-serif; color: #efeeeb; background: #0b0c0c; width: 100%; overflow-x: clip; -webkit-font-smoothing: antialiased">
 
 <!-- ============ NAV (fixa) ============ -->
-<nav aria-label="Navegação principal" style="position: sticky; top: 0; z-index: 50; background: rgba(8,9,9,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(239,238,235,0.08)">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 56px); height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
-    <a href="#topo" aria-label="Marquise Signature — início" style="display: block; width: 128px; flex: 0 0 auto">
-      <img src="assets/img/logo-white.png" alt="Marquise Signature" style="display: block; width: 100%; height: auto">
-    </a>
-    <div class="ms-hide-md" style="display: flex; align-items: center; gap: 36px; font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase">
-      <a href="#conceito" class="ms-link" style="padding: 14px 0">Conceito</a>
-      <a href="#colecoes" class="ms-link" style="padding: 14px 0">Coleções</a>
-      <a href="#como-funciona" class="ms-link" style="padding: 14px 0">Como funciona</a>
-      <a href="#duvidas" class="ms-link" style="padding: 14px 0">Dúvidas</a>
-    </div>
-    <div style="display: flex; align-items: center; gap: 8px">
-      <a href="#contato" class="ms-btn" style="flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid rgba(239,238,235,0.55); color: #efeeeb; font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; text-decoration: none">Contato</a>
-      <button type="button" class="ms-show-md" id="menu-btn" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu" style="width: 44px; height: 44px; align-items: center; justify-content: center; background: none; border: 0; color: #efeeeb; cursor: pointer; padding: 0">
-        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 7h18M3 12h18M3 17h18"></path></svg>
-      </button>
+<nav aria-label="Navegação principal" style="position: sticky; top: 0; z-index: 50; background: rgba(12,13,13,0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 56px)">
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 16px; height: clamp(72px, 7vw, 92px); border-bottom: 1px solid rgba(239,238,235,0.55)">
+      <div style="display: flex; align-items: center; gap: 44px; font-size: 14px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase">
+        <a href="https://marquiseincorporacoes.com.br/empreendimentos/ceara" class="ms-link ms-hide-md" style="padding: 12px 0; color: #efeeeb">Ceará</a>
+        <a href="https://marquiseincorporacoes.com.br/empreendimentos/sao-paulo" class="ms-link ms-hide-md" style="padding: 12px 0; color: #efeeeb">São Paulo</a>
+      </div>
+      <a href="https://marquiseincorporacoes.com.br" aria-label="Marquise Incorporações — site institucional" style="display: block; width: clamp(150px, 15vw, 200px)">
+        <img src="assets/img/marquise-logo.png" alt="Marquise Incorporações" style="display: block; width: 100%; height: auto">
+      </a>
+      <div style="display: flex; justify-content: flex-end">
+        <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu" style="display: inline-flex; align-items: center; gap: 14px; min-height: 44px; padding: 0; background: none; border: 0; color: #efeeeb; cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase">
+          <span class="ms-hide-sm">Menu</span>
+          <svg aria-hidden="true" width="26" height="22" viewBox="0 0 26 22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 4h24M1 11h24M1 18h24"></path></svg>
+        </button>
+      </div>
     </div>
   </div>
-  <div id="menu-mobile" hidden class="ms-menu" style="border-top: 1px solid rgba(239,238,235,0.08); padding: 8px clamp(16px, 5vw, 56px) 20px; display: flex; flex-direction: column; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase">
-      <a href="#conceito" style="padding: 16px 0; border-bottom: 1px solid rgba(239,238,235,0.1)">Conceito</a>
-      <a href="#colecoes" style="padding: 16px 0; border-bottom: 1px solid rgba(239,238,235,0.1)">Coleções</a>
-      <a href="#como-funciona" style="padding: 16px 0; border-bottom: 1px solid rgba(239,238,235,0.1)">Como funciona</a>
-      <a href="#duvidas" style="padding: 16px 0">Dúvidas</a>
+  <div id="menu-mobile" hidden class="ms-menu" style="max-width: 1280px; margin: 0 auto; padding: 24px clamp(16px, 5vw, 56px) 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 48px">
+      <div style="display: flex; flex-direction: column">
+        <p style="margin: 0 0 8px; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #d2b48c">Marquise Signature</p>
+        <a href="#conceito" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Conceito</a>
+        <a href="#colecoes" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Coleções</a>
+        <a href="#como-funciona" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Como funciona</a>
+        <a href="#duvidas" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Dúvidas</a>
+        <a href="#contato" style="padding: 14px 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Contato</a>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <p style="margin: 0 0 8px; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #d2b48c">Marquise Incorporações</p>
+        <a href="https://marquiseincorporacoes.com.br/sobre" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Sobre</a>
+        <a href="https://marquiseincorporacoes.com.br/empreendimentos/ceara" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Empreendimentos Ceará</a>
+        <a href="https://marquiseincorporacoes.com.br/empreendimentos/sao-paulo" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Empreendimentos São Paulo</a>
+        <a href="https://marquiseincorporacoes.com.br/portal-do-cliente" style="padding: 14px 0; border-bottom: 1px solid rgba(239,238,235,0.12); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Portal do Cliente</a>
+        <a href="https://marquiseincorporacoes.com.br/contato" style="padding: 14px 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300">Fale com um consultor</a>
+      </div>
     </div>
   
 </nav>
@@ -499,21 +511,65 @@ a{color:#d2b48c}a:hover{color:#ead7b8}
 </section>
 </main>
 
-<footer style="background: #060707; padding: 56px 0 40px; border-top: 1px solid #1f2121">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 56px); display: flex; flex-direction: column; gap: 40px">
-    <div style="display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; justify-content: space-between">
-      <img src="assets/img/logo-white.png" alt="Marquise Signature" style="display: block; width: 168px; height: auto">
-      <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase">
-        <a href="#conceito" class="ms-link" style="padding: 10px 0">Conceito</a>
-        <a href="#colecoes" class="ms-link" style="padding: 10px 0">Coleções</a>
-        <a href="#como-funciona" class="ms-link" style="padding: 10px 0">Como funciona</a>
-        <a href="#duvidas" class="ms-link" style="padding: 10px 0">Dúvidas</a>
-        <a href="#contato" class="ms-link" style="padding: 10px 0">Contato</a>
+<footer style="background: #000000; padding: clamp(48px, 5vw, 64px) 0 40px">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 56px); display: flex; flex-direction: column">
+    <a href="https://marquiseincorporacoes.com.br" aria-label="Marquise Incorporações — site institucional" style="display: block; width: 224px; align-self: center">
+      <img src="assets/img/marquise-logo.png" alt="Marquise Incorporações" style="display: block; width: 100%; height: auto">
+    </a>
+    <div aria-hidden="true" style="height: 1px; background: rgba(239,238,235,0.4); margin: 44px 0 40px"></div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px 32px">
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #efeeeb">Contatos</h2>
+        <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.4; font-weight: 300; color: #b3b0aa">
+          <a href="https://api.whatsapp.com/send?phone=5585992164148" class="ms-link" style="color: #b3b0aa">Vendas Fortaleza: (85) 9 9216-4148</a>
+          <a href="tel:+558540083331" class="ms-link" style="color: #b3b0aa">Relacionamento com o Cliente Fortaleza: (85) 4008-3331</a>
+          <a href="https://api.whatsapp.com/send?phone=5511993830394" class="ms-link" style="color: #b3b0aa">Vendas São Paulo: (11) 9 9383-0394</a>
+          <a href="tel:+551135067333" class="ms-link" style="color: #b3b0aa">Relacionamento com o Cliente São Paulo: (11) 3506-7333</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #efeeeb">Empreendimentos</h2>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.4; font-weight: 300">
+          <a href="https://marquiseincorporacoes.com.br/empreendimentos/ceara" class="ms-link" style="color: #b3b0aa; padding: 4px 0">Ceará</a>
+          <a href="https://marquiseincorporacoes.com.br/empreendimentos/sao-paulo" class="ms-link" style="color: #b3b0aa; padding: 4px 0">São Paulo</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #efeeeb">Institucional</h2>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.4; font-weight: 300">
+          <a href="https://marquiseincorporacoes.com.br/sobre" class="ms-link" style="color: #b3b0aa; padding: 4px 0">Sobre</a>
+          <a href="https://grupomarquise.gupy.io/" class="ms-link" style="color: #b3b0aa; padding: 4px 0">Trabalhe conosco</a>
+          <a href="https://marquiseincorporacoes.com.br/venda-seu-terreno" class="ms-link" style="color: #b3b0aa; padding: 4px 0">Venda seu terreno</a>
+          <a href="https://marquiseincorporacoes.com.br/sou-vizinho-de-uma-obra" class="ms-link" style="color: #b3b0aa; padding: 4px 0">Sou vizinho de uma obra</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <a href="https://marquiseincorporacoes.com.br/portal-do-cliente" class="ms-link" style="color: #efeeeb; font-size: 15px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase">Portal do Cliente</a>
+        <a href="https://marquiseincorporacoes.com.br/area-corretor" class="ms-link" style="color: #efeeeb; font-size: 15px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase">Área do Corretor</a>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px; margin: 0 0 0 -11px">
+          <a href="https://api.whatsapp.com/send?phone=5585992164148" class="ms-link" aria-label="WhatsApp" style="display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: #b3b0aa">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5 5 16.2A8.5 8.5 0 1 1 8 19.2z"></path><path d="M9 8.5c0 3.5 2.8 6.5 6.5 6.5l1-1.6-2.1-1-1 .9c-1.3-.5-2.3-1.5-2.8-2.8l.9-1-1-2.1z" stroke-width="1.2"></path></svg>
+          </a>
+          <a href="https://www.instagram.com/marquiseincorporacoes/" class="ms-link" aria-label="Instagram" style="display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: #b3b0aa">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"></circle></svg>
+          </a>
+          <a href="https://www.facebook.com/marquiseincorporacoes/" class="ms-link" aria-label="Facebook" style="display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: #b3b0aa">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"></path></svg>
+          </a>
+          <a href="https://www.youtube.com/c/marquiseincorporacoes" class="ms-link" aria-label="YouTube" style="display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: #b3b0aa">
+            <svg aria-hidden="true" width="26" height="22" viewBox="0 0 26 20" fill="currentColor"><path d="M25.4 3.1A3.2 3.2 0 0 0 23.1.8C21.1.3 13 .3 13 .3S4.9.3 2.9.8A3.2 3.2 0 0 0 .6 3.1C.1 5.1.1 10 .1 10s0 4.9.5 6.9a3.2 3.2 0 0 0 2.3 2.3c2 .5 10.1.5 10.1.5s8.1 0 10.1-.5a3.2 3.2 0 0 0 2.3-2.3c.5-2 .5-6.9.5-6.9s0-4.9-.5-6.9zM10.4 14.2V5.8l6.8 4.2z"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/marquiseincorporacoes/" class="ms-link" aria-label="LinkedIn" style="display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: #b3b0aa">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 9h3.6v11.5H4zM5.8 3.3a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM9.8 9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.8z"></path></svg>
+          </a>
+        </div>
       </div>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; padding-top: 24px; border-top: 1px solid #1f2121; font-size: 12px; line-height: 1.6; color: #8d8a85">
-      <p style="margin: 0; max-width: 640px">Imagens meramente ilustrativas. As possibilidades de escolha dependem das opções e condições de cada empreendimento.</p>
-      <p style="margin: 0">© Marquise Incorporações · <a href="#contato" style="color: #c9c6c0">Política de Privacidade</a></p>
+
+    <div style="margin-top: 56px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
+      <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #8d8a85; max-width: 720px">Imagens meramente ilustrativas. As possibilidades de escolha dependem das opções e condições de cada empreendimento.</p>
+      <p style="margin: 0; font-size: 12px; line-height: 1.6; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; color: #b3b0aa">2026 Copyright - Todos os direitos reservados | Uma empresa do Grupo Marquise.</p>
     </div>
   </div>
 </footer>
