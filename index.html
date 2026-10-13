@@ -42,6 +42,11 @@ a{color:#e8502c}a:hover{color:#f27a5c}
 .ms-vbtn{transition:background .3s ease,color .3s ease,border-color .3s ease}
 .ms-vbtn:hover{background:#efeeeb !important;color:#0b0c0c !important;border-color:#efeeeb !important}
 @media (max-width:1920px){.ms-banner-sides{display:none}}
+.ms-banner{background-image:url("assets/img/banner-poster.jpg");background-size:cover;background-position:center}
+@media (max-width:767px){
+.ms-banner{aspect-ratio:1080 / 1350 !important;background-image:url("assets/img/banner-poster-mobile.jpg")}
+.ms-banner-fade{height:8% !important}
+}
 .ms-vbtn{z-index:2}
 @media (max-width:600px){.ms-vbtn{width:32px !important;height:32px !important;right:8px !important;bottom:8px !important}}
 .ms-ul{position:relative}
@@ -149,13 +154,15 @@ html:not(.ms-js) .ms-steps>li:nth-child(3) .ms-draw{animation-range:cover 45% co
 <header id="topo" style="background: #0a0c0c">
   <!-- Banner animado -->
   <div class="ms-banner" style="position: relative; width: 100%; max-width: 1920px; margin: 0 auto; aspect-ratio: 1920 / 822; background: #0a0c0c; overflow: hidden">
-    <video class="ms-banner-video" id="banner-video" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="assets/img/banner-poster.jpg" role="img" aria-label="Marquise Signature: animação com amostras de pedras, metais e madeiras das coleções" style="display: block; width: 100%; height: 100%; object-fit: cover">
-      <source src="assets/video/banner-1280.mp4" type="video/mp4" media="(max-width: 900px)">
-      <source src="assets/video/banner-1280.webm" type="video/webm" media="(max-width: 900px)">
+    <video class="ms-banner-video" id="banner-video" autoplay="" muted="" loop="" playsinline="" preload="auto" role="img" aria-label="Marquise Signature: animação com amostras de pedras, metais e madeiras das coleções" style="display: block; width: 100%; height: 100%; object-fit: cover">
+      <source src="assets/video/banner-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+      <source src="assets/video/banner-mobile.webm" type="video/webm" media="(max-width: 767px)">
+      <source src="assets/video/banner-1280.mp4" type="video/mp4" media="(max-width: 1280px)">
+      <source src="assets/video/banner-1280.webm" type="video/webm" media="(max-width: 1280px)">
       <source src="assets/video/banner-1920.mp4" type="video/mp4">
       <source src="assets/video/banner-1920.webm" type="video/webm">
     </video>
-    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -1px; height: 26%; pointer-events: none; background: linear-gradient(180deg, rgba(10,12,12,0) 0%, rgba(10,12,12,0.65) 45%, #0a0c0c 92%)"></div>
+    <div aria-hidden="true" class="ms-banner-fade" style="position: absolute; left: 0; right: 0; bottom: -1px; height: 26%; pointer-events: none; background: linear-gradient(180deg, rgba(10,12,12,0) 0%, rgba(10,12,12,0.65) 45%, #0a0c0c 92%)"></div>
     <div aria-hidden="true" class="ms-banner-sides" style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #0a0c0c 0%, rgba(10,12,12,0) 3%, rgba(10,12,12,0) 97%, #0a0c0c 100%)"></div>
     <button type="button" class="ms-vbtn" id="video-btn" aria-label="Pausar animação do banner" style="position: absolute; right: clamp(12px, 2.5vw, 32px); bottom: clamp(12px, 2.5vw, 32px); width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 1px solid rgba(239,238,235,0.35); background: rgba(9,11,10,0.55); color: #efeeeb; cursor: pointer">
       <svg data-icon="pause" aria-hidden="true" width="12" height="14" viewBox="0 0 12 14" fill="currentColor"><rect x="1" y="1" width="3" height="12"></rect><rect x="8" y="1" width="3" height="12"></rect></svg>
